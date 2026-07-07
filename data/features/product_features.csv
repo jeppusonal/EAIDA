@@ -1,201 +1,201 @@
 product_id,category,units_sold,revenue,average_discount,average_price,return_rate,sales_last_30_days,sales_last_90_days,rolling_sales_growth,product_features_gap
-1,Groceries,554,8648.12,0.1371,15.6,0.009,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-2,Sporting Goods,554,154144.66,0.1273,278.3,0.0289,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-3,Home & Kitchen,455,174479.43,0.136,383.4,0.0242,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-4,Electronics,542,189094.38,0.1386,348.55,0.0148,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-5,Sporting Goods,556,121223.97,0.1342,218.59,0.018,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-6,Electronics,512,142449.44,0.1324,277.84,0.0195,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-7,Apparel,546,21982.1,0.1223,40.17,0.022,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-8,Toys,546,42124.32,0.1324,77.25,0.0055,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-9,Groceries,592,22107.54,0.1374,37.33,0.0186,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-10,Sporting Goods,551,83329.71,0.1457,151.44,0.0163,25,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-11,Beauty,553,15588.45,0.1399,28.18,0.0145,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-12,Apparel,534,26032.83,0.1454,48.8,0.015,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-13,Toys,578,27403.54,0.1314,47.47,0.0225,45,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-14,Toys,508,33033.47,0.1482,64.97,0.0157,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-15,Home & Kitchen,561,204320.81,0.1394,363.88,0.0214,52,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-16,Apparel,504,57118.45,0.1291,113.17,0.0298,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-17,Apparel,579,76302.63,0.14,131.49,0.0173,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-18,Home & Kitchen,533,161561.03,0.1428,303.4,0.0131,28,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-19,Sporting Goods,482,64048.3,0.1387,132.82,0.0104,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-20,Groceries,569,21401.17,0.1366,37.6,0.0158,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-21,Apparel,540,50814.2,0.155,94.07,0.013,49,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-22,Beauty,536,20563.24,0.1474,38.32,0.0168,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-23,Home & Kitchen,507,138295.71,0.1414,272.58,0.0138,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-24,Beauty,533,32335.88,0.1371,60.6,0.0188,50,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-25,Apparel,596,53058.04,0.1265,88.91,0.0151,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-26,Apparel,574,43875.82,0.1485,76.52,0.0192,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-27,Toys,586,53017.04,0.1451,90.65,0.0068,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-28,Apparel,558,44805.22,0.148,80.23,0.009,55,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-29,Beauty,541,24076.55,0.1371,44.51,0.0129,24,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-30,Home & Kitchen,580,214924.12,0.1375,370.85,0.0121,56,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-31,Groceries,517,19637.64,0.153,37.92,0.0251,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-32,Electronics,583,459438.5,0.1324,788.73,0.012,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-33,Home & Kitchen,501,89012.58,0.1233,177.65,0.014,47,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-34,Home & Kitchen,550,38395.6,0.1481,69.86,0.0091,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-35,Groceries,538,3068.46,0.1277,5.7,0.0167,19,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-36,Beauty,483,13260.99,0.1444,27.45,0.0166,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-37,Electronics,535,32493.82,0.1308,60.8,0.0131,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-38,Toys,467,39379.32,0.1429,84.39,0.015,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-39,Home & Kitchen,523,52446.05,0.1333,100.23,0.0229,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-40,Groceries,582,4624.7,0.1292,7.94,0.0069,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-41,Groceries,537,10960.65,0.14,20.4,0.0112,23,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-42,Groceries,576,14901.08,0.1383,25.92,0.0174,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-43,Toys,540,4714.34,0.14,8.71,0.0111,25,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-44,Beauty,527,7566.16,0.1364,14.36,0.0152,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-45,Beauty,568,43183.62,0.1314,75.94,0.0141,25,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-46,Sporting Goods,528,96838.17,0.1298,183.34,0.0189,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-47,Sporting Goods,513,141879.11,0.1414,276.59,0.0156,56,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-48,Beauty,537,10943.22,0.1433,20.41,0.0149,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-49,Beauty,522,33459.44,0.1428,63.98,0.0115,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-50,Beauty,499,7869.94,0.1195,15.77,0.01,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-51,Electronics,530,399429.8,0.1407,754.92,0.0113,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-52,Electronics,552,531634.89,0.13,963.45,0.0199,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-53,Sporting Goods,502,28924.52,0.1447,57.65,0.0159,24,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-54,Electronics,583,89226.23,0.1343,152.78,0.0086,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-55,Beauty,533,28183.82,0.1566,52.89,0.015,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-56,Toys,530,26376.4,0.15,49.82,0.0151,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-57,Electronics,551,363198.34,0.1297,659.05,0.0073,47,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-58,Electronics,530,441579.47,0.1457,833.78,0.0151,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-59,Electronics,541,547014.4,0.1375,1010.1,0.0111,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-60,Home & Kitchen,514,132284.9,0.125,257.62,0.0117,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-61,Toys,526,43662.57,0.1281,82.92,0.0247,53,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-62,Home & Kitchen,538,207421.42,0.1375,385.87,0.0074,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-63,Sporting Goods,578,169947.68,0.14,293.77,0.0121,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-64,Groceries,550,9199.53,0.1265,16.73,0.0145,51,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-65,Sporting Goods,549,43521.3,0.14,79.26,0.0237,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-66,Electronics,560,575804.3,0.1375,1028.28,0.0179,53,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-67,Sporting Goods,522,54545.12,0.131,104.55,0.0096,49,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-68,Groceries,562,18131.64,0.1322,32.25,0.0249,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-69,Electronics,537,148984.15,0.1382,277.64,0.0223,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-70,Groceries,491,4187.3,0.1383,8.53,0.0305,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-71,Sporting Goods,495,66293.88,0.1516,133.73,0.0182,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-72,Electronics,541,266848.39,0.129,492.8,0.0111,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-73,Groceries,556,2797.86,0.1538,5.04,0.0126,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-74,Home & Kitchen,508,191909.96,0.1351,377.8,0.0197,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-75,Toys,573,20273.54,0.1242,35.38,0.0175,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-76,Groceries,490,3098.24,0.1423,6.32,0.0143,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-77,Electronics,532,175501.22,0.1379,329.77,0.0226,53,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-78,Home & Kitchen,519,22002.35,0.1399,42.38,0.0212,22,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-79,Groceries,552,12711.87,0.1277,23.0,0.0163,48,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-80,Home & Kitchen,597,189028.99,0.1452,316.48,0.0235,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-81,Apparel,516,52880.88,0.1333,102.45,0.0136,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-82,Home & Kitchen,552,91463.31,0.1384,166.04,0.0163,45,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-83,Home & Kitchen,546,170742.79,0.1361,312.2,0.0256,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-84,Electronics,552,289360.18,0.1545,524.83,0.0127,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-85,Sporting Goods,573,6795.33,0.1332,11.85,0.0175,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-86,Sporting Goods,517,65371.66,0.15,126.34,0.0193,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-87,Groceries,519,3283.2,0.1345,6.32,0.027,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-88,Electronics,490,106530.12,0.132,217.18,0.0306,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-89,Sporting Goods,590,29798.54,0.15,50.53,0.0136,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-90,Sporting Goods,525,50189.98,0.1236,95.51,0.0171,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-91,Toys,567,20477.87,0.1286,36.06,0.0088,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-92,Electronics,507,357357.77,0.1459,704.68,0.0158,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-93,Home & Kitchen,583,215106.98,0.14,369.31,0.0154,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-94,Groceries,569,13663.72,0.1452,24.01,0.0176,28,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-95,Electronics,535,534705.08,0.1395,1001.15,0.0019,28,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-96,Toys,572,55219.89,0.1318,96.31,0.014,23,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-97,Apparel,548,45330.83,0.1434,82.67,0.0255,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-98,Home & Kitchen,570,30741.96,0.1172,53.87,0.014,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-99,Home & Kitchen,553,18559.15,0.1429,33.53,0.0163,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-100,Electronics,549,553362.79,0.1393,1007.07,0.0128,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-101,Apparel,552,53812.58,0.1286,97.58,0.0181,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-102,Home & Kitchen,548,110888.02,0.1333,202.33,0.0164,48,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-103,Apparel,541,59921.21,0.1448,110.66,0.0092,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-104,Home & Kitchen,511,8174.77,0.1363,15.98,0.0157,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-105,Sporting Goods,477,121412.01,0.1393,254.41,0.021,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-106,Sporting Goods,526,113331.38,0.1441,215.7,0.0152,40,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-107,Beauty,561,25073.99,0.1381,44.7,0.0143,24,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-108,Apparel,603,62408.86,0.1395,103.54,0.0182,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-109,Sporting Goods,504,90190.76,0.1472,179.01,0.006,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-110,Electronics,603,334649.75,0.1286,555.63,0.0182,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-111,Electronics,566,348172.66,0.1353,615.27,0.0124,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-112,Toys,526,2902.14,0.1382,5.51,0.0171,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-113,Home & Kitchen,531,139782.21,0.1455,263.35,0.0132,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-114,Groceries,527,20412.01,0.14,38.75,0.0304,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-115,Beauty,566,21044.62,0.1333,37.15,0.0212,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-116,Sporting Goods,515,23810.9,0.1479,46.26,0.0136,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-117,Sporting Goods,496,95627.09,0.1185,192.65,0.0121,45,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-118,Toys,546,25290.73,0.1457,46.34,0.0128,38,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-119,Sporting Goods,525,29974.83,0.1289,57.0,0.0171,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-120,Toys,551,26895.22,0.1445,48.7,0.0181,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-121,Electronics,554,118792.75,0.1353,214.46,0.0126,48,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-122,Beauty,531,34793.36,0.15,65.49,0.0113,27,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-123,Home & Kitchen,580,114885.48,0.1389,198.18,0.0155,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-124,Home & Kitchen,574,173193.1,0.1364,302.06,0.0105,38,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-125,Apparel,502,13238.5,0.1386,26.37,0.0139,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-126,Apparel,537,11507.59,0.1342,21.42,0.0168,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-127,Apparel,509,64709.96,0.1438,127.0,0.0275,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-128,Electronics,512,277986.12,0.1323,542.9,0.0117,50,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-129,Apparel,568,66683.74,0.1321,117.27,0.0106,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-130,Home & Kitchen,507,26492.78,0.1425,52.22,0.0138,28,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-131,Beauty,502,11236.56,0.1546,22.38,0.0159,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-132,Sporting Goods,509,138034.02,0.1269,271.12,0.0275,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-133,Toys,515,8150.0,0.1346,15.83,0.0175,38,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-134,Groceries,533,11820.62,0.1417,22.19,0.0169,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-135,Toys,608,18893.78,0.1383,30.97,0.0181,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-136,Beauty,550,14923.62,0.1432,27.12,0.0182,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-137,Beauty,515,4444.46,0.1354,8.61,0.0097,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-138,Toys,467,32122.78,0.15,68.77,0.0086,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-139,Sporting Goods,561,13301.58,0.1251,23.69,0.0107,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-140,Groceries,549,7976.22,0.1401,14.54,0.0146,52,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-141,Apparel,520,43466.89,0.15,83.47,0.0154,54,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-142,Electronics,570,656891.38,0.1394,1152.67,0.014,56,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-143,Beauty,477,32289.19,0.1472,67.65,0.0168,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-144,Groceries,557,11248.35,0.1353,20.22,0.0108,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-145,Toys,553,44922.17,0.1451,81.21,0.0199,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-146,Beauty,517,15875.5,0.15,30.72,0.0097,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-147,Electronics,575,50144.19,0.1334,87.3,0.0243,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-148,Beauty,540,10937.3,0.1427,20.25,0.0222,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-149,Apparel,468,8229.04,0.1404,17.6,0.0128,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-150,Sporting Goods,490,49953.88,0.16,101.96,0.0265,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-151,Groceries,522,11452.32,0.1272,21.93,0.0134,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-152,Sporting Goods,575,62296.56,0.1412,108.32,0.0104,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-153,Groceries,546,11864.19,0.1406,21.73,0.0201,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-154,Toys,487,25568.37,0.1539,52.48,0.0062,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-155,Beauty,519,12612.15,0.1556,24.26,0.0077,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-156,Sporting Goods,521,131243.95,0.1524,252.09,0.0192,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-157,Home & Kitchen,545,93391.5,0.12,171.2,0.022,35,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-158,Sporting Goods,507,34431.42,0.1486,67.79,0.0138,50,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-159,Apparel,531,46152.58,0.1519,86.83,0.0207,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-160,Home & Kitchen,504,120721.73,0.1471,239.54,0.0179,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-161,Toys,519,31670.15,0.1458,61.04,0.0116,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-162,Home & Kitchen,485,140404.28,0.1222,289.36,0.0206,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-163,Beauty,498,17793.28,0.1344,35.81,0.012,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-164,Groceries,541,4679.71,0.1287,8.67,0.0148,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-165,Beauty,566,41842.97,0.1411,73.83,0.0177,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-166,Beauty,535,28048.87,0.1581,52.52,0.0112,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-167,Apparel,537,15038.42,0.1321,28.08,0.0149,40,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-168,Sporting Goods,514,35142.78,0.1296,68.3,0.0136,40,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-169,Beauty,554,19379.02,0.1449,35.02,0.0235,53,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-170,Toys,491,30110.03,0.1309,61.25,0.0041,47,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-171,Groceries,548,21449.04,0.123,39.16,0.0164,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-172,Groceries,594,6502.38,0.1412,10.95,0.0185,64,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-173,Toys,589,42232.27,0.1259,71.68,0.0153,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-174,Groceries,519,19064.43,0.1452,36.81,0.0096,48,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-175,Groceries,595,9745.17,0.1417,16.39,0.0084,33,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-176,Sporting Goods,528,112021.5,0.1444,212.3,0.0189,45,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-177,Beauty,568,9454.47,0.1473,16.64,0.0194,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-178,Sporting Goods,529,68934.9,0.1304,130.27,0.0208,46,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-179,Groceries,445,5803.94,0.1637,13.06,0.0225,29,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-180,Apparel,542,33484.96,0.1325,61.78,0.0166,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-181,Home & Kitchen,536,66395.45,0.1357,123.97,0.0093,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-182,Beauty,510,32042.1,0.1333,62.85,0.0196,32,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-183,Toys,508,29327.9,0.1302,57.76,0.0098,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-184,Apparel,511,61284.46,0.1433,119.9,0.002,42,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-185,Home & Kitchen,573,88767.8,0.127,154.78,0.0122,41,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-186,Sporting Goods,499,52034.78,0.141,104.13,0.014,37,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-187,Sporting Goods,478,49296.16,0.144,102.94,0.0167,43,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-188,Home & Kitchen,557,59884.84,0.1314,107.52,0.0197,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-189,Sporting Goods,513,108158.4,0.1474,210.67,0.0156,31,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-190,Apparel,522,68971.02,0.1342,131.94,0.0211,36,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-191,Beauty,557,10180.37,0.1455,18.25,0.0287,49,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-192,Beauty,541,4127.46,0.1501,7.64,0.0148,38,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-193,Apparel,504,8978.91,0.1238,17.8,0.0159,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-194,Sporting Goods,570,12616.9,0.1366,22.13,0.0158,51,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-195,Groceries,541,10955.85,0.1395,20.29,0.0166,44,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-196,Apparel,545,63050.5,0.1351,115.67,0.0128,34,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-197,Sporting Goods,582,62534.93,0.15,107.3,0.0137,47,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-198,Toys,558,23931.56,0.137,42.88,0.0233,39,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-199,Groceries,562,19878.3,0.1435,35.33,0.0107,26,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
-200,Toys,552,49989.75,0.1405,90.56,0.0199,30,,,sales_last_90_days and rolling_sales_growth require a product_monthly_sales analytics table (not yet built)
+1,Groceries,554,8648.12,0.1371,15.6,0.009,33,113.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+2,Sporting Goods,554,154144.66,0.1273,278.3,0.0289,37,105.0,0.1935,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+3,Home & Kitchen,455,174479.43,0.136,383.4,0.0242,26,93.0,-0.1875,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+4,Electronics,542,189094.38,0.1386,348.55,0.0148,44,131.0,0.05,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+5,Sporting Goods,556,121223.97,0.1342,218.59,0.018,26,100.0,-0.2941,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+6,Electronics,512,142449.44,0.1324,277.84,0.0195,37,116.0,-0.1778,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+7,Apparel,546,21982.1,0.1223,40.17,0.022,39,108.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+8,Toys,546,42124.32,0.1324,77.25,0.0055,36,117.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+9,Groceries,592,22107.54,0.1374,37.33,0.0186,33,130.0,-0.3462,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+10,Sporting Goods,551,83329.71,0.1457,151.44,0.0163,25,113.0,-0.3421,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+11,Beauty,553,15588.45,0.1399,28.18,0.0145,33,139.0,-0.2222,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+12,Apparel,534,26032.83,0.1454,48.8,0.015,39,102.0,1.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+13,Toys,578,27403.54,0.1314,47.47,0.0225,45,137.0,-0.1754,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+14,Toys,508,33033.47,0.1482,64.97,0.0157,41,144.0,-0.381,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+15,Home & Kitchen,561,204320.81,0.1394,363.88,0.0214,52,132.0,0.3,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+16,Apparel,504,57118.45,0.1291,113.17,0.0298,30,80.0,0.2174,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+17,Apparel,579,76302.63,0.14,131.49,0.0173,35,133.0,-0.3846,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+18,Home & Kitchen,533,161561.03,0.1428,303.4,0.0131,28,127.0,-0.3488,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+19,Sporting Goods,482,64048.3,0.1387,132.82,0.0104,31,94.0,-0.3333,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+20,Groceries,569,21401.17,0.1366,37.6,0.0158,37,79.0,0.7619,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+21,Apparel,540,50814.2,0.155,94.07,0.013,49,115.0,0.4242,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+22,Beauty,536,20563.24,0.1474,38.32,0.0168,29,126.0,-0.3636,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+23,Home & Kitchen,507,138295.71,0.1414,272.58,0.0138,31,116.0,-0.3542,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+24,Beauty,533,32335.88,0.1371,60.6,0.0188,50,108.0,0.7037,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+25,Apparel,596,53058.04,0.1265,88.91,0.0151,41,137.0,-0.0667,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+26,Apparel,574,43875.82,0.1485,76.52,0.0192,32,103.0,-0.1081,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+27,Toys,586,53017.04,0.1451,90.65,0.0068,34,112.0,0.3846,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+28,Apparel,558,44805.22,0.148,80.23,0.009,55,137.0,0.325,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+29,Beauty,541,24076.55,0.1371,44.51,0.0129,24,91.0,-0.2,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+30,Home & Kitchen,580,214924.12,0.1375,370.85,0.0121,56,138.0,0.098,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+31,Groceries,517,19637.64,0.153,37.92,0.0251,29,114.0,-0.451,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+32,Electronics,583,459438.5,0.1324,788.73,0.012,34,118.0,-0.3191,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+33,Home & Kitchen,501,89012.58,0.1233,177.65,0.014,47,87.0,0.9167,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+34,Home & Kitchen,550,38395.6,0.1481,69.86,0.0091,32,125.0,-0.2727,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+35,Groceries,538,3068.46,0.1277,5.7,0.0167,19,93.0,-0.5294,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+36,Beauty,483,13260.99,0.1444,27.45,0.0166,35,101.0,0.129,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+37,Electronics,535,32493.82,0.1308,60.8,0.0131,42,141.0,0.25,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+38,Toys,467,39379.32,0.1429,84.39,0.015,34,88.0,0.44,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+39,Home & Kitchen,523,52446.05,0.1333,100.23,0.0229,39,114.0,0.027,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+40,Groceries,582,4624.7,0.1292,7.94,0.0069,29,136.0,-0.4545,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+41,Groceries,537,10960.65,0.14,20.4,0.0112,23,104.0,-0.4634,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+42,Groceries,576,14901.08,0.1383,25.92,0.0174,43,133.0,-0.0816,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+43,Toys,540,4714.34,0.14,8.71,0.0111,25,111.0,-0.4898,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+44,Beauty,527,7566.16,0.1364,14.36,0.0152,46,126.0,0.4412,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+45,Beauty,568,43183.62,0.1314,75.94,0.0141,25,84.0,0.08,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+46,Sporting Goods,528,96838.17,0.1298,183.34,0.0189,32,110.0,-0.1707,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+47,Sporting Goods,513,141879.11,0.1414,276.59,0.0156,56,122.0,0.5135,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+48,Beauty,537,10943.22,0.1433,20.41,0.0149,43,101.0,0.5556,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+49,Beauty,522,33459.44,0.1428,63.98,0.0115,41,99.0,0.5,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+50,Beauty,499,7869.94,0.1195,15.77,0.01,36,87.0,0.5238,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+51,Electronics,530,399429.8,0.1407,754.92,0.0113,43,116.0,0.5312,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+52,Electronics,552,531634.89,0.13,963.45,0.0199,31,123.0,-0.4528,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+53,Sporting Goods,502,28924.52,0.1447,57.65,0.0159,24,93.0,-0.3421,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+54,Electronics,583,89226.23,0.1343,152.78,0.0086,43,131.0,-0.1042,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+55,Beauty,533,28183.82,0.1566,52.89,0.015,36,118.0,0.129,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+56,Toys,530,26376.4,0.15,49.82,0.0151,42,106.0,-0.0909,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+57,Electronics,551,363198.34,0.1297,659.05,0.0073,47,113.0,0.4194,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+58,Electronics,530,441579.47,0.1457,833.78,0.0151,43,127.0,-0.1087,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+59,Electronics,541,547014.4,0.1375,1010.1,0.0111,41,130.0,0.1351,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+60,Home & Kitchen,514,132284.9,0.125,257.62,0.0117,30,92.0,0.1111,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+61,Toys,526,43662.57,0.1281,82.92,0.0247,53,120.0,0.8929,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+62,Home & Kitchen,538,207421.42,0.1375,385.87,0.0074,41,126.0,0.3125,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+63,Sporting Goods,578,169947.68,0.14,293.77,0.0121,30,128.0,-0.2326,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+64,Groceries,550,9199.53,0.1265,16.73,0.0145,51,118.0,0.6061,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+65,Sporting Goods,549,43521.3,0.14,79.26,0.0237,46,126.0,0.0455,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+66,Electronics,560,575804.3,0.1375,1028.28,0.0179,53,122.0,1.0769,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+67,Sporting Goods,522,54545.12,0.131,104.55,0.0096,49,126.0,0.0667,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+68,Groceries,562,18131.64,0.1322,32.25,0.0249,32,133.0,-0.3455,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+69,Electronics,537,148984.15,0.1382,277.64,0.0223,37,99.0,0.8182,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+70,Groceries,491,4187.3,0.1383,8.53,0.0305,26,94.0,-0.1,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+71,Sporting Goods,495,66293.88,0.1516,133.73,0.0182,34,100.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+72,Electronics,541,266848.39,0.129,492.8,0.0111,29,111.0,-0.3095,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+73,Groceries,556,2797.86,0.1538,5.04,0.0126,46,137.0,-0.25,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+74,Home & Kitchen,508,191909.96,0.1351,377.8,0.0197,36,139.0,-0.1395,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+75,Toys,573,20273.54,0.1242,35.38,0.0175,34,120.0,-0.2766,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+76,Groceries,490,3098.24,0.1423,6.32,0.0143,37,106.0,0.7391,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+77,Electronics,532,175501.22,0.1379,329.77,0.0226,53,114.0,0.5152,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+78,Home & Kitchen,519,22002.35,0.1399,42.38,0.0212,22,112.0,-0.4783,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+79,Groceries,552,12711.87,0.1277,23.0,0.0163,48,138.0,0.0909,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+80,Home & Kitchen,597,189028.99,0.1452,316.48,0.0235,37,109.0,-0.0263,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+81,Apparel,516,52880.88,0.1333,102.45,0.0136,31,106.0,-0.2381,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+82,Home & Kitchen,552,91463.31,0.1384,166.04,0.0163,45,118.0,0.122,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+83,Home & Kitchen,546,170742.79,0.1361,312.2,0.0256,35,123.0,-0.2979,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+84,Electronics,552,289360.18,0.1545,524.83,0.0127,29,117.0,-0.1471,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+85,Sporting Goods,573,6795.33,0.1332,11.85,0.0175,43,142.0,-0.2182,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+86,Sporting Goods,517,65371.66,0.15,126.34,0.0193,26,82.0,-0.2353,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+87,Groceries,519,3283.2,0.1345,6.32,0.027,32,118.0,-0.3617,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+88,Electronics,490,106530.12,0.132,217.18,0.0306,41,120.0,-0.1087,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+89,Sporting Goods,590,29798.54,0.15,50.53,0.0136,41,134.0,-0.18,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+90,Sporting Goods,525,50189.98,0.1236,95.51,0.0171,43,117.0,0.1351,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+91,Toys,567,20477.87,0.1286,36.06,0.0088,26,101.0,-0.1333,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+92,Electronics,507,357357.77,0.1459,704.68,0.0158,36,97.0,-0.0303,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+93,Home & Kitchen,583,215106.98,0.14,369.31,0.0154,37,116.0,-0.1707,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+94,Groceries,569,13663.72,0.1452,24.01,0.0176,28,124.0,-0.3913,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+95,Electronics,535,534705.08,0.1395,1001.15,0.0019,28,111.0,-0.4186,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+96,Toys,572,55219.89,0.1318,96.31,0.014,23,86.0,-0.2903,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+97,Apparel,548,45330.83,0.1434,82.67,0.0255,33,102.0,-0.2368,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+98,Home & Kitchen,570,30741.96,0.1172,53.87,0.014,43,118.0,0.1892,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+99,Home & Kitchen,553,18559.15,0.1429,33.53,0.0163,42,136.0,0.0263,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+100,Electronics,549,553362.79,0.1393,1007.07,0.0128,26,106.0,-0.2778,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+101,Apparel,552,53812.58,0.1286,97.58,0.0181,42,103.0,0.0238,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+102,Home & Kitchen,548,110888.02,0.1333,202.33,0.0164,48,139.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+103,Apparel,541,59921.21,0.1448,110.66,0.0092,43,131.0,0.0244,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+104,Home & Kitchen,511,8174.77,0.1363,15.98,0.0157,33,124.0,-0.3182,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+105,Sporting Goods,477,121412.01,0.1393,254.41,0.021,35,80.0,0.9444,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+106,Sporting Goods,526,113331.38,0.1441,215.7,0.0152,40,87.0,0.3929,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+107,Beauty,561,25073.99,0.1381,44.7,0.0143,24,100.0,-0.5435,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+108,Apparel,603,62408.86,0.1395,103.54,0.0182,44,121.0,0.2571,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+109,Sporting Goods,504,90190.76,0.1472,179.01,0.006,31,110.0,-0.2439,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+110,Electronics,603,334649.75,0.1286,555.63,0.0182,44,139.0,0.2571,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+111,Electronics,566,348172.66,0.1353,615.27,0.0124,46,142.0,0.0233,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+112,Toys,526,2902.14,0.1382,5.51,0.0171,30,105.0,-0.2955,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+113,Home & Kitchen,531,139782.21,0.1455,263.35,0.0132,32,104.0,0.0333,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+114,Groceries,527,20412.01,0.14,38.75,0.0304,34,99.0,-0.2045,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+115,Beauty,566,21044.62,0.1333,37.15,0.0212,46,109.0,1.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+116,Sporting Goods,515,23810.9,0.1479,46.26,0.0136,41,121.0,0.5926,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+117,Sporting Goods,496,95627.09,0.1185,192.65,0.0121,45,105.0,0.7308,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+118,Toys,546,25290.73,0.1457,46.34,0.0128,38,105.0,-0.0256,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+119,Sporting Goods,525,29974.83,0.1289,57.0,0.0171,42,111.0,0.2222,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+120,Toys,551,26895.22,0.1445,48.7,0.0181,34,111.0,-0.0244,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+121,Electronics,554,118792.75,0.1353,214.46,0.0126,48,110.0,0.9583,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+122,Beauty,531,34793.36,0.15,65.49,0.0113,27,106.0,-0.3415,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+123,Home & Kitchen,580,114885.48,0.1389,198.18,0.0155,35,114.0,-0.3043,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+124,Home & Kitchen,574,173193.1,0.1364,302.06,0.0105,38,105.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+125,Apparel,502,13238.5,0.1386,26.37,0.0139,32,101.0,-0.1842,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+126,Apparel,537,11507.59,0.1342,21.42,0.0168,46,109.0,0.6667,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+127,Apparel,509,64709.96,0.1438,127.0,0.0275,35,95.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+128,Electronics,512,277986.12,0.1323,542.9,0.0117,50,112.0,1.0833,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+129,Apparel,568,66683.74,0.1321,117.27,0.0106,31,142.0,-0.2826,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+130,Home & Kitchen,507,26492.78,0.1425,52.22,0.0138,28,92.0,-0.1515,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+131,Beauty,502,11236.56,0.1546,22.38,0.0159,44,133.0,0.122,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+132,Sporting Goods,509,138034.02,0.1269,271.12,0.0275,30,118.0,-0.0541,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+133,Toys,515,8150.0,0.1346,15.83,0.0175,38,104.0,0.0286,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+134,Groceries,533,11820.62,0.1417,22.19,0.0169,34,124.0,-0.122,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+135,Toys,608,18893.78,0.1383,30.97,0.0181,43,123.0,0.0857,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+136,Beauty,550,14923.62,0.1432,27.12,0.0182,32,102.0,-0.3182,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+137,Beauty,515,4444.46,0.1354,8.61,0.0097,35,117.0,-0.3,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+138,Toys,467,32122.78,0.15,68.77,0.0086,30,75.0,0.2727,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+139,Sporting Goods,561,13301.58,0.1251,23.69,0.0107,42,114.0,0.1351,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+140,Groceries,549,7976.22,0.1401,14.54,0.0146,52,144.0,-0.037,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+141,Apparel,520,43466.89,0.15,83.47,0.0154,54,129.0,0.3846,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+142,Electronics,570,656891.38,0.1394,1152.67,0.014,56,113.0,0.697,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+143,Beauty,477,32289.19,0.1472,67.65,0.0168,42,117.0,0.6296,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+144,Groceries,557,11248.35,0.1353,20.22,0.0108,44,123.0,0.6296,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+145,Toys,553,44922.17,0.1451,81.21,0.0199,26,95.0,0.1667,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+146,Beauty,517,15875.5,0.15,30.72,0.0097,33,98.0,0.1379,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+147,Electronics,575,50144.19,0.1334,87.3,0.0243,42,118.0,0.1143,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+148,Beauty,540,10937.3,0.1427,20.25,0.0222,39,122.0,0.027,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+149,Apparel,468,8229.04,0.1404,17.6,0.0128,39,112.0,0.2258,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+150,Sporting Goods,490,49953.88,0.16,101.96,0.0265,29,98.0,-0.2424,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+151,Groceries,522,11452.32,0.1272,21.93,0.0134,36,106.0,-0.1579,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+152,Sporting Goods,575,62296.56,0.1412,108.32,0.0104,33,122.0,-0.0789,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+153,Groceries,546,11864.19,0.1406,21.73,0.0201,34,131.0,-0.234,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+154,Toys,487,25568.37,0.1539,52.48,0.0062,42,123.0,0.1667,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+155,Beauty,519,12612.15,0.1556,24.26,0.0077,39,94.0,0.4615,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+156,Sporting Goods,521,131243.95,0.1524,252.09,0.0192,34,90.0,0.2593,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+157,Home & Kitchen,545,93391.5,0.12,171.2,0.022,35,89.0,0.4583,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+158,Sporting Goods,507,34431.42,0.1486,67.79,0.0138,50,129.0,0.5,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+159,Apparel,531,46152.58,0.1519,86.83,0.0207,32,95.0,0.0,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+160,Home & Kitchen,504,120721.73,0.1471,239.54,0.0179,31,80.0,0.2174,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+161,Toys,519,31670.15,0.1458,61.04,0.0116,43,138.0,-0.2157,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+162,Home & Kitchen,485,140404.28,0.1222,289.36,0.0206,33,107.0,0.2,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+163,Beauty,498,17793.28,0.1344,35.81,0.012,32,113.0,-0.3333,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+164,Groceries,541,4679.71,0.1287,8.67,0.0148,31,121.0,-0.3043,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+165,Beauty,566,41842.97,0.1411,73.83,0.0177,36,101.0,0.0333,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+166,Beauty,535,28048.87,0.1581,52.52,0.0112,46,129.0,0.1842,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+167,Apparel,537,15038.42,0.1321,28.08,0.0149,40,121.0,-0.0952,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+168,Sporting Goods,514,35142.78,0.1296,68.3,0.0136,40,105.0,0.0526,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+169,Beauty,554,19379.02,0.1449,35.02,0.0235,53,126.0,0.5938,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+170,Toys,491,30110.03,0.1309,61.25,0.0041,47,119.0,0.2308,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+171,Groceries,548,21449.04,0.123,39.16,0.0164,31,106.0,0.6316,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+172,Groceries,594,6502.38,0.1412,10.95,0.0185,64,134.0,1.1034,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+173,Toys,589,42232.27,0.1259,71.68,0.0153,43,134.0,0.0789,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+174,Groceries,519,19064.43,0.1452,36.81,0.0096,48,114.0,0.3143,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+175,Groceries,595,9745.17,0.1417,16.39,0.0084,33,128.0,-0.2609,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+176,Sporting Goods,528,112021.5,0.1444,212.3,0.0189,45,120.0,0.2857,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+177,Beauty,568,9454.47,0.1473,16.64,0.0194,36,108.0,0.0286,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+178,Sporting Goods,529,68934.9,0.1304,130.27,0.0208,46,99.0,0.84,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+179,Groceries,445,5803.94,0.1637,13.06,0.0225,29,72.0,0.4286,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+180,Apparel,542,33484.96,0.1325,61.78,0.0166,42,118.0,-0.2727,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+181,Home & Kitchen,536,66395.45,0.1357,123.97,0.0093,41,124.0,0.0238,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+182,Beauty,510,32042.1,0.1333,62.85,0.0196,32,119.0,-0.4545,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+183,Toys,508,29327.9,0.1302,57.76,0.0098,30,91.0,0.5238,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+184,Apparel,511,61284.46,0.1433,119.9,0.002,42,105.0,0.5357,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+185,Home & Kitchen,573,88767.8,0.127,154.78,0.0122,41,96.0,0.1429,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+186,Sporting Goods,499,52034.78,0.141,104.13,0.014,37,107.0,0.5,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+187,Sporting Goods,478,49296.16,0.144,102.94,0.0167,43,101.0,1.1905,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+188,Home & Kitchen,557,59884.84,0.1314,107.52,0.0197,44,122.0,0.0227,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+189,Sporting Goods,513,108158.4,0.1474,210.67,0.0156,31,112.0,-0.1316,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+190,Apparel,522,68971.02,0.1342,131.94,0.0211,36,82.0,0.0645,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+191,Beauty,557,10180.37,0.1455,18.25,0.0287,49,124.0,0.2308,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+192,Beauty,541,4127.46,0.1501,7.64,0.0148,38,134.0,-0.1522,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+193,Apparel,504,8978.91,0.1238,17.8,0.0159,39,117.0,0.0571,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+194,Sporting Goods,570,12616.9,0.1366,22.13,0.0158,51,123.0,0.4167,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+195,Groceries,541,10955.85,0.1395,20.29,0.0166,44,95.0,0.9167,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+196,Apparel,545,63050.5,0.1351,115.67,0.0128,34,120.0,-0.1951,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+197,Sporting Goods,582,62534.93,0.15,107.3,0.0137,47,130.0,-0.0426,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+198,Toys,558,23931.56,0.137,42.88,0.0233,39,116.0,0.2414,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+199,Groceries,562,19878.3,0.1435,35.33,0.0107,26,89.0,-0.2,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
+200,Toys,552,49989.75,0.1405,90.56,0.0199,30,104.0,-0.1795,resolved: sales_last_90_days and rolling_sales_growth now sourced from product_monthly_sales.csv
