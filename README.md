@@ -5,7 +5,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Active%20Development-blue)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)
-![License](https://img.shields.io/badge/License-MIT-green)
+
 
 ---
 
@@ -253,10 +253,5 @@ University of Technology Sydney
 
 GitHub: https://github.com/jeppusonal
 
-LinkedIn: *(Add your LinkedIn URL)*
+LinkedIn: *https://www.linkedin.com/in/sonal-jeppu-rao/*
 
----
-
-## License
-
-This project is licensed under the MIT License.
