@@ -1,257 +1,93 @@
-# EAIDA
-### Enterprise AI Intelligent Data Assistant
+# EAIDA — Enterprise AI Intelligent Data Assistant (MVP)
 
-> An end-to-end enterprise retail analytics platform that combines synthetic data generation, data engineering, machine learning, business intelligence, and agentic AI to deliver intelligent business insights.
+> Ask a business question in natural language. Get SQL, data, a chart, and an explanation back.
 
-![Status](https://img.shields.io/badge/Status-Active%20Development-blue)
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python)
+This is the fast-MVP track of EAIDA: a scoped-down, 10–14 day build that proves the core loop before we invest in the full data platform (Airflow, dbt, multi-agent orchestration, Azure). Everything here is designed to be replaced or extended, not thrown away — the data model and folder layout match the long-term architecture, we're just deferring the heavy infrastructure.
 
+## The one question this MVP answers
 
----
+**"Why did sales drop in Sydney?"**
 
-## Overview
+The synthetic dataset is generated with a deliberate, realistic revenue dip in the Sydney store in the most recent period. The point of the MVP is to be able to ask that question in plain English and get a grounded, data-backed answer — not to boil the ocean on every possible business question.
 
-EAIDA (Enterprise AI Intelligent Data Assistant) is a production-inspired analytics platform designed to simulate a real enterprise retail environment.
+## MVP scope
 
-The project demonstrates the complete modern data lifecycle—from synthetic data generation and validation to analytics, forecasting, APIs, dashboards, and AI-powered business decision support.
+**In scope:**
+- Python, PostgreSQL, Streamlit
+- Synthetic retail dataset (customers, stores, products, orders, order items, inventory, returns, marketing campaigns)
+- Basic ML (a simple regression/trend model to quantify the drop)
+- A local LLM via Ollama for natural-language explanation (added once the data layer is solid)
 
-Rather than querying databases manually, users will be able to ask questions such as:
+**Explicitly out of scope for MVP** (deferred to the full build):
+- Airflow orchestration
+- dbt transformations
+- Multi-agent system
+- Azure deployment
+- Vector database / RAG
 
-- Why did sales decline last month?
-- Which products are at risk of stockout?
-- Forecast next month's revenue.
-- Which marketing campaigns generated the highest ROI?
-- What business anomalies require immediate attention?
+## Status
 
-EAIDA combines data engineering, analytics, machine learning, and large language models into a single enterprise solution.
+- **Day 1–2**: dataset design and generation (this README, architecture overview, and notebooks under `notebooks/`).
+- **Day 3**: raw data loaded into PostgreSQL (`src/loading/load_raw_data.py`), six analytical views defined (`sql/02_analytical_views.sql`), and the Sydney revenue drop proven with plain SQL — no ML yet (`sql/03_sydney_drop_analysis.sql`). The drop is real: Sydney revenue fell ~41% month-over-month in May 2026 versus a trailing-3-month expectation, and the decline is broad-based across product categories rather than concentrated in one — see `docs/data/day3_findings.md`.
 
----
+### Running Day 3 locally (macOS)
 
-# Features
+```bash
+# 1. Postgres running locally (either works)
+brew install postgresql@16 && brew services start postgresql@16
+# or: docker run --name eaida-pg -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:16
 
-## Completed
+createdb eaida
 
-- Synthetic enterprise retail dataset generation
-- Customer, product, order, inventory and marketing data simulation
-- Referential integrity validation
-- Enterprise-grade data quality framework
-- Temporal consistency validation
-- Business anomaly simulation
-- Automated validation report (62 quality checks)
+# 2. Python env
+pip install -r requirements.txt
+cp .env.example .env   # adjust credentials if yours differ
 
-## In Progress
+# 3. Load the data (creates schema + loads all 8 tables)
+python -m src.loading.load_raw_data
 
-- Analytics Layer
-- Feature Engineering
-- Machine Learning Models
-- Sales Forecasting
-- FastAPI Backend
+# 4. Create the analytical views
+psql eaida -f sql/02_analytical_views.sql
 
-## Planned
-
-- Streamlit Dashboard
-- LLM-powered Analytics Assistant
-- Multi-Agent Architecture
-- RAG Integration
-- Azure Deployment
-- Docker
-- CI/CD Pipeline
-
----
-
-# Architecture
-
-```
-                Business User
-                       │
-                       ▼
-             Natural Language Query
-                       │
-                       ▼
-             Enterprise AI Assistant
-                       │
-     ┌─────────────────┼─────────────────┐
-     ▼                 ▼                 ▼
- Analytics         SQL Engine      ML Engine
-     │                 │                 │
-     └─────────────────┼─────────────────┘
-                       ▼
-             Enterprise Data Platform
-                       │
-          Synthetic Retail Data Lake
+# 5. Run the drop analysis
+psql eaida -f sql/03_sydney_drop_analysis.sql
 ```
 
----
-
-# Data Pipeline
+## Project structure
 
 ```
-Synthetic Data
-      │
-      ▼
-Raw Data Generation
-      │
-      ▼
-Data Validation
-      │
-      ▼
-Analytics Layer
-      │
-      ▼
-Feature Store
-      │
-      ▼
-Machine Learning
-      │
-      ▼
-Business Intelligence
-      │
-      ▼
-AI Assistant
-```
-
----
-
-# Project Structure
-
-```
-EAIDA
-│
-├── data/
-│   └── raw/
-│
-├── notebooks/
+eaida/
+├── README.md
+├── docs/
+│   ├── architecture/overview.md      # MVP architecture (this stage)
+│   ├── data/dataset_generation_plan.md
+│   └── adr/                          # architecture decision records
+├── notebooks/                        # exploratory, educational data generation
 │   ├── 01_generate_customers.ipynb
 │   ├── 02_generate_products.ipynb
 │   ├── 03_generate_stores.ipynb
 │   ├── 04_generate_orders.ipynb
-│   ├── 04b_generate_order_items.ipynb
 │   ├── 05_generate_inventory.ipynb
 │   ├── 06_generate_returns.ipynb
 │   ├── 07_generate_marketing_campaigns.ipynb
 │   └── 08_data_validation.ipynb
-│
-├── src/
-├── docs/
-├── sql/
-├── README.md
-└── requirements.txt
+├── data/raw/                         # generated CSVs land here
+└── src/                              # reusable modules (populated after MVP notebooks are validated)
 ```
 
----
+## Why notebooks first
 
-# Tech Stack
+For the MVP data-generation stage, notebooks are the right tool: they make each generation decision visible and inspectable (sample rows, distributions, validation) while we're still shaping the dataset. Once the schema and generation logic are validated, the reusable logic moves into `src/` as proper modules — notebooks stay as documentation and exploration, not production code.
 
-### Data Engineering
+## Getting started
 
-- Python
-- SQL
-- Pandas
-- Databricks
-- PySpark
+```bash
+cd eaida
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt   # added once dependencies are finalized
+jupyter lab notebooks/
+```
 
-### Machine Learning
+## Roadmap after the MVP
 
-- Scikit-learn
-- XGBoost (Planned)
-- Prophet (Planned)
-
-### AI
-
-- OpenAI
-- LangChain (Planned)
-- LangGraph (Planned)
-
-### Backend
-
-- FastAPI (Planned)
-
-### Frontend
-
-- Streamlit (Planned)
-
-### Database
-
-- PostgreSQL (Planned)
-
-### Cloud
-
-- Azure (Planned)
-
----
-
-# Data Quality
-
-The project includes an automated validation framework with **62 quality checks** covering:
-
-- Primary Key Validation
-- Foreign Key Validation
-- Referential Integrity
-- Temporal Consistency
-- Missing Values
-- Duplicate Detection
-- Business Rule Validation
-- Distribution Checks
-- Time-Series Validation
-- Enterprise Anomaly Detection
-
-Current Result:
-
-**Data Quality Score: 100%**
-
----
-
-# Business Scenario
-
-EAIDA simulates an enterprise retail organisation operating across multiple cities.
-
-The synthetic data includes intentionally designed business behaviour, including:
-
-- Seasonal demand
-- Customer acquisition trends
-- Marketing campaigns
-- Inventory changes
-- Product returns
-- Regional business anomalies
-
-This enables realistic analytics and machine learning experimentation.
-
----
-
-# Roadmap
-
-- [x] Synthetic Data Generation
-- [x] Data Validation Framework
-- [ ] Analytics Layer
-- [ ] Feature Engineering
-- [ ] Machine Learning Models
-- [ ] Sales Forecasting
-- [ ] FastAPI
-- [ ] Streamlit Dashboard
-- [ ] AI Assistant
-- [ ] Multi-Agent Architecture
-- [ ] Azure Deployment
-- [ ] Docker
-- [ ] CI/CD
-
----
-
-# Why This Project?
-
-Modern enterprises require more than dashboards—they need intelligent systems capable of understanding business data, identifying anomalies, forecasting outcomes, and recommending actions.
-
-EAIDA demonstrates how Data Engineering, Machine Learning, Business Intelligence, and Generative AI can work together in a production-inspired environment.
-
----
-
-# Author
-
-**Sonal Rao**
-
-Master of Data Science and Innovation  
-University of Technology Sydney
-
-GitHub: https://github.com/jeppusonal
-
-LinkedIn: *https://www.linkedin.com/in/sonal-jeppu-rao/*
-
+Once the natural-language → SQL → chart → explanation loop works end to end on this synthetic dataset, later milestones re-introduce the full architecture: dbt for transformation, Airflow for orchestration, a vector database for document/RAG search, and a proper multi-agent system. See `docs/architecture/overview.md` for how this MVP maps onto that longer-term design.
