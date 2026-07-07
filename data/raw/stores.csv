@@ -1,0 +1,9 @@
+store_id,store_name,city,state,region,open_date
+1,Sydney Store 1,Sydney,NSW,Australia,2020-04-18
+2,Sydney Store 2,Sydney,NSW,Australia,2020-08-15
+3,Melbourne Store 3,Melbourne,VIC,Australia,2020-12-23
+4,Melbourne Store 4,Melbourne,VIC,Australia,2022-05-04
+5,Brisbane Store 5,Brisbane,QLD,Australia,2020-05-23
+6,Perth Store 6,Perth,WA,Australia,2022-01-26
+7,Adelaide Store 7,Adelaide,SA,Australia,2020-05-23
+8,Canberra Store 8,Canberra,ACT,Australia,2020-10-25
