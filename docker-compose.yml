@@ -1,0 +1,24 @@
+services:
+  backend:
+    build: .
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/analytics:/app/data/analytics
+      - ./data/features:/app/data/features
+      - ./data/predictions:/app/data/predictions
+
+  dashboard:
+    build: .
+    command: streamlit run app/streamlit_app.py --server.address 0.0.0.0 --server.port 8501
+    ports:
+      - "8501:8501"
+    environment:
+      - EAIDA_API_BASE_URL=http://backend:8000
+    volumes:
+      - ./data/analytics:/app/data/analytics
+      - ./data/features:/app/data/features
+      - ./data/predictions:/app/data/predictions
+    depends_on:
+      - backend
