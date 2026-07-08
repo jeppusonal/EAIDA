@@ -1,56 +1,86 @@
-"""EAIDA — Executive Dashboard (Milestone 5).
+"""EAIDA — Executive Dashboard (Milestone 7).
 
-Reads pre-computed CSVs from data/analytics, data/features, and
-data/predictions only. This app does NOT touch data/raw, does not run any
-ETL, and does not talk to Postgres — it is a pure presentation layer over
-work already done in earlier milestones (Day 3-4 SQL analysis, the feature
-store, and the Day 5 forecasting baseline).
+Data now comes from the FastAPI backend, not local CSVs. Every page calls
+`fetch(endpoint)`, which handles connection failures, timeouts, and
+unavailable datasets, and returns parsed JSON (or None on failure).
 
-Run with:
+Run with (FastAPI backend must already be running):
     streamlit run app/streamlit_app.py
 """
-from pathlib import Path
+from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import requests
 import streamlit as st
-
-# ---------------------------------------------------------------------------
-# Paths — resolved relative to this file, so it works regardless of the
-# directory the user happens to run `streamlit run` from.
-# ---------------------------------------------------------------------------
-BASE_DIR = Path(__file__).resolve().parent.parent
-ANALYTICS_DIR = BASE_DIR / "data" / "analytics"
-FEATURES_DIR = BASE_DIR / "data" / "features"
-PREDICTIONS_DIR = BASE_DIR / "data" / "predictions"
 
 st.set_page_config(page_title="EAIDA — Executive Dashboard", layout="wide")
 
+DEFAULT_BACKEND_URL = "http://127.0.0.1:8000"
+REQUEST_TIMEOUT_SECONDS = 5
+
 
 # ---------------------------------------------------------------------------
-# Loading — every file is optional from the app's point of view. A missing
-# or unreadable file degrades that section gracefully instead of crashing
-# the whole dashboard, since different milestones populate these folders
-# at different times.
+# fetch() — the one reusable helper every page uses to talk to the backend.
+# Never raises. Always returns parsed JSON on success, None on any failure,
+# after showing a friendly warning explaining what went wrong.
 # ---------------------------------------------------------------------------
-@st.cache_data
-def load_csv(path: Path) -> pd.DataFrame | None:
-    if not path.exists():
+def fetch(endpoint: str) -> dict | list | None:
+    base_url = st.session_state.get("backend_url", DEFAULT_BACKEND_URL).rstrip("/")
+    url = f"{base_url}{endpoint}"
+
+    try:
+        response = requests.get(url, timeout=REQUEST_TIMEOUT_SECONDS)
+    except requests.exceptions.ConnectionError:
+        st.warning(
+            f"Can't reach the backend at `{base_url}`. Is FastAPI running? "
+            "Check the Backend URL in the sidebar."
+        )
+        return None
+    except requests.exceptions.Timeout:
+        st.warning(f"Request to `{endpoint}` timed out after {REQUEST_TIMEOUT_SECONDS}s.")
+        return None
+    except requests.exceptions.RequestException as exc:
+        st.warning(f"Request to `{endpoint}` failed: {exc}")
+        return None
+
+    if response.status_code == 404:
+        st.warning(f"`{endpoint}` not found on the backend (404). Dataset may not be available yet.")
+        return None
+    if response.status_code == 503:
+        st.warning(f"`{endpoint}` reports the dataset is unavailable (503).")
+        return None
+    if not response.ok:
+        st.warning(f"`{endpoint}` returned HTTP {response.status_code}.")
+        return None
+
+    try:
+        return response.json()
+    except ValueError:
+        st.warning(f"`{endpoint}` did not return valid JSON.")
+        return None
+
+
+def to_df(payload: dict | list | None, key: str | None = None) -> pd.DataFrame | None:
+    """Turn a fetch() payload into a DataFrame. If key is given, pull that
+    field out of a dict payload first (endpoints return multiple named
+    tables per call)."""
+    if payload is None:
+        return None
+    data = payload.get(key) if key and isinstance(payload, dict) else payload
+    if data is None:
         return None
     try:
-        return pd.read_csv(path)
-    except Exception as exc:  # noqa: BLE001 — deliberately broad, this is a UI guard
-        st.warning(f"Could not read `{path.name}`: {exc}")
+        return pd.DataFrame(data)
+    except Exception as exc:  # noqa: BLE001 — UI guard, same spirit as before
+        st.warning(f"Could not parse `{key or ''}` response: {exc}")
         return None
 
 
-def missing_file_notice(name: str, expected_path: Path) -> None:
-    st.warning(
-        f"**{name}** not found at `{expected_path.relative_to(BASE_DIR)}`. "
-        "This section will populate once that milestone's pipeline has been run."
-    )
+def missing_data_notice(name: str) -> None:
+    st.warning(f"**{name}** is not available right now. This section will populate once the backend can serve it.")
 
 
 def section_title(title: str, explanation: str) -> None:
@@ -58,57 +88,19 @@ def section_title(title: str, explanation: str) -> None:
     st.caption(explanation)
 
 
-def get_partial_month(daily_df: pd.DataFrame | None) -> str | None:
-    """Return the 'YYYY-MM' string of the trailing month if it's a partial
-    month (data generation stops "today", so the current calendar month
-    never has a full set of days) — otherwise None.
-
-    Derived from daily_sales.csv rather than hardcoded, so this keeps
-    working correctly if the dataset is regenerated on a different date.
-    """
-    if daily_df is None or daily_df.empty:
-        return None
-    dates = pd.to_datetime(daily_df["date"])
-    max_date = dates.max()
-    period = max_date.to_period("M")
-    if max_date.day < period.days_in_month:
-        return str(period)
-    return None
-
-
-def exclude_partial_month(df: pd.DataFrame, month_col: str, partial_month: str | None) -> pd.DataFrame:
-    if partial_month is None:
-        return df
-    return df[df[month_col].astype(str) != partial_month]
-
-
 # ---------------------------------------------------------------------------
-# Data loads — one place, so every page shares the same cached frames.
-# ---------------------------------------------------------------------------
-monthly_sales = load_csv(ANALYTICS_DIR / "monthly_sales.csv")
-daily_sales = load_csv(ANALYTICS_DIR / "daily_sales.csv")
-customer_summary = load_csv(ANALYTICS_DIR / "customer_summary.csv")
-store_performance = load_csv(ANALYTICS_DIR / "store_performance.csv")
-product_performance = load_csv(ANALYTICS_DIR / "product_performance.csv")
-returns_summary = load_csv(ANALYTICS_DIR / "returns_summary.csv")
-inventory_health = load_csv(ANALYTICS_DIR / "inventory_health.csv")
-
-customer_features = load_csv(FEATURES_DIR / "customer_features.csv")
-product_features = load_csv(FEATURES_DIR / "product_features.csv")
-store_features = load_csv(FEATURES_DIR / "store_features.csv")
-
-sales_forecast = load_csv(PREDICTIONS_DIR / "sales_forecast_baseline.csv")
-
-# Trailing partial month (e.g. the current calendar month, if data generation
-# stopped mid-month) — computed once here and reused by every trend chart.
-PARTIAL_MONTH = get_partial_month(daily_sales)
-
-
-# ---------------------------------------------------------------------------
-# Sidebar navigation
+# Sidebar navigation + backend configuration
 # ---------------------------------------------------------------------------
 st.sidebar.title("EAIDA")
-st.sidebar.caption("Enterprise AI Intelligent Data Assistant")
+st.sidebar.caption("Enterprise AI Data Assistant — MVP dashboard")
+
+if "backend_url" not in st.session_state:
+    st.session_state["backend_url"] = DEFAULT_BACKEND_URL
+
+st.session_state["backend_url"] = st.sidebar.text_input(
+    "Backend URL", value=st.session_state["backend_url"]
+)
+
 page = st.sidebar.radio(
     "Navigate",
     [
@@ -122,8 +114,9 @@ page = st.sidebar.radio(
 )
 st.sidebar.divider()
 st.sidebar.caption(
-    "Data sources: `data/analytics/`, `data/features/`, `data/predictions/`. "
-    "This app reads pre-computed CSVs only — it does not run any pipeline."
+    "Data source: FastAPI backend at the URL above "
+    "(`/api/overview`, `/api/revenue`, `/api/forecast`, `/api/products`, "
+    "`/api/stores`, `/api/inventory`, `/api/customers`)."
 )
 
 
@@ -134,88 +127,57 @@ if page == "Executive Overview":
     st.title("Executive Overview")
     st.caption(
         "Top-line business health across the full history in the dataset. "
-        "Figures are computed from `monthly_sales.csv` and `customer_summary.csv`."
+        "Figures come from `/api/overview` (monthly sales) and `/api/customers` (customer summary)."
     )
 
+    overview_payload = fetch("/api/overview")
+    monthly_sales = to_df(overview_payload, "monthly_sales")
+
+    customers_payload = fetch("/api/customers")
+    customer_summary = to_df(customers_payload, "customer_summary")
+
     if monthly_sales is not None:
-        full_months = exclude_partial_month(monthly_sales, "month", PARTIAL_MONTH)
-
-        total_revenue = full_months["revenue"].sum()
-        total_orders = full_months["orders"].sum()
+        total_revenue = monthly_sales["revenue"].sum()
+        total_orders = monthly_sales["orders"].sum()
         avg_order_value = total_revenue / total_orders if total_orders else float("nan")
-
-        # Month-over-month deltas, based on the last two FULL months only —
-        # comparing against a partial month would show a fake, huge "drop".
-        delta_revenue = delta_orders = delta_aov = None
-        if len(full_months) >= 2:
-            last_row = full_months.iloc[-1]
-            prev_row = full_months.iloc[-2]
-            delta_revenue = (last_row["revenue"] - prev_row["revenue"]) / prev_row["revenue"] * 100
-            delta_orders = (last_row["orders"] - prev_row["orders"]) / prev_row["orders"] * 100
-            last_aov = last_row["revenue"] / last_row["orders"] if last_row["orders"] else np.nan
-            prev_aov = prev_row["revenue"] / prev_row["orders"] if prev_row["orders"] else np.nan
-            delta_aov = (last_aov - prev_aov) / prev_aov * 100 if prev_aov else None
     else:
         total_revenue = total_orders = avg_order_value = None
-        delta_revenue = delta_orders = delta_aov = None
 
     total_customers = len(customer_summary) if customer_summary is not None else None
 
     col1, col2, col3, col4 = st.columns(4)
-    with col1.container(border=True):
-        st.metric(
-            "Total revenue",
-            f"${total_revenue:,.0f}" if total_revenue is not None else "—",
-            delta=f"{delta_revenue:+.1f}% vs prior month" if delta_revenue is not None else None,
-        )
-    with col2.container(border=True):
-        st.metric(
-            "Total orders",
-            f"{total_orders:,.0f}" if total_orders is not None else "—",
-            delta=f"{delta_orders:+.1f}% vs prior month" if delta_orders is not None else None,
-        )
-    with col3.container(border=True):
-        st.metric("Total customers", f"{total_customers:,}" if total_customers is not None else "—")
-    with col4.container(border=True):
-        st.metric(
-            "Average order value",
-            f"${avg_order_value:,.2f}" if avg_order_value is not None and not np.isnan(avg_order_value) else "—",
-            delta=f"{delta_aov:+.1f}% vs prior month" if delta_aov is not None else None,
-        )
-
-    if PARTIAL_MONTH is not None:
-        st.caption(
-            f"KPI totals and month-over-month deltas exclude **{PARTIAL_MONTH}**, "
-            "which is a partial month in the underlying data."
-        )
+    col1.metric("Total revenue", f"${total_revenue:,.0f}" if total_revenue is not None else "—")
+    col2.metric("Total orders", f"{total_orders:,.0f}" if total_orders is not None else "—")
+    col3.metric("Total customers", f"{total_customers:,}" if total_customers is not None else "—")
+    col4.metric(
+        "Average order value",
+        f"${avg_order_value:,.2f}" if avg_order_value is not None and not np.isnan(avg_order_value) else "—",
+    )
 
     st.divider()
 
     if monthly_sales is not None:
-        trend_df = exclude_partial_month(monthly_sales, "month", PARTIAL_MONTH)
-        partial_note = f" (**{PARTIAL_MONTH}** excluded — partial month)" if PARTIAL_MONTH else ""
-
         section_title(
             "Revenue trend",
-            f"Total revenue by month across all stores and cities.{partial_note}",
+            "Total revenue by month across all stores and cities.",
         )
-        fig = px.line(trend_df, x="month", y="revenue", markers=True)
+        fig = px.line(monthly_sales, x="month", y="revenue", markers=True)
         fig.update_layout(yaxis_title="Revenue ($)", xaxis_title="Month")
         st.plotly_chart(fig, use_container_width=True)
 
         section_title(
             "Monthly sales volume",
             "Orders and units sold by month — useful for separating a revenue "
-            f"drop caused by fewer orders from one caused by smaller baskets.{partial_note}",
+            "drop caused by fewer orders from one caused by smaller baskets.",
         )
         fig2 = go.Figure()
-        fig2.add_bar(x=trend_df["month"], y=trend_df["orders"], name="Orders")
-        if "units_sold" in trend_df.columns:
-            fig2.add_bar(x=trend_df["month"], y=trend_df["units_sold"], name="Units sold")
+        fig2.add_bar(x=monthly_sales["month"], y=monthly_sales["orders"], name="Orders")
+        if "units_sold" in monthly_sales.columns:
+            fig2.add_bar(x=monthly_sales["month"], y=monthly_sales["units_sold"], name="Units sold")
         fig2.update_layout(barmode="group", xaxis_title="Month", yaxis_title="Count")
         st.plotly_chart(fig2, use_container_width=True)
     else:
-        missing_file_notice("monthly_sales.csv", ANALYTICS_DIR / "monthly_sales.csv")
+        missing_data_notice("Monthly sales")
 
 
 # ---------------------------------------------------------------------------
@@ -224,6 +186,9 @@ if page == "Executive Overview":
 elif page == "Store Performance":
     st.title("Store Performance")
     st.caption("Revenue and health by store and city, with the Sydney anomaly called out explicitly.")
+
+    stores_payload = fetch("/api/stores")
+    store_performance = to_df(stores_payload, "store_performance")
 
     if store_performance is not None:
         section_title("Revenue by city", "Store-level revenue rolled up to the city it belongs to.")
@@ -244,15 +209,17 @@ elif page == "Store Performance":
             hide_index=True,
         )
     else:
-        missing_file_notice("store_performance.csv", ANALYTICS_DIR / "store_performance.csv")
+        missing_data_notice("Store performance")
 
     st.divider()
+    revenue_payload = fetch("/api/revenue")
+    daily_sales = to_df(revenue_payload, "daily_sales")
+
     if daily_sales is not None:
-        partial_note = f" **{PARTIAL_MONTH}** is excluded as a partial month." if PARTIAL_MONTH else ""
         section_title(
             "Sydney anomaly — monthly revenue trend by city",
             "Sydney drawn in orange against every other city in gray, so the drop is "
-            f"visually unmistakable rather than buried in a table.{partial_note}",
+            "visually unmistakable rather than buried in a table.",
         )
         daily_sales["date"] = pd.to_datetime(daily_sales["date"])
         monthly_by_city = (
@@ -260,7 +227,6 @@ elif page == "Store Performance":
             .groupby(["month", "city"], as_index=False)["revenue"]
             .sum()
         )
-        monthly_by_city = exclude_partial_month(monthly_by_city, "month", PARTIAL_MONTH)
         fig = go.Figure()
         for city in sorted(monthly_by_city["city"].unique()):
             sub = monthly_by_city[monthly_by_city["city"] == city]
@@ -275,7 +241,7 @@ elif page == "Store Performance":
         fig.update_layout(xaxis_title="Month", yaxis_title="Revenue ($)")
         st.plotly_chart(fig, use_container_width=True)
     else:
-        missing_file_notice("daily_sales.csv", ANALYTICS_DIR / "daily_sales.csv")
+        missing_data_notice("Daily sales")
 
 
 # ---------------------------------------------------------------------------
@@ -283,6 +249,9 @@ elif page == "Store Performance":
 # ---------------------------------------------------------------------------
 elif page == "Product Performance":
     st.title("Product Performance")
+
+    products_payload = fetch("/api/products")
+    product_performance = to_df(products_payload, "product_performance")
 
     if product_performance is not None:
         section_title("Top 10 products by revenue", "Highest-earning products across the full history.")
@@ -315,7 +284,7 @@ elif page == "Product Performance":
         )
         st.plotly_chart(fig3, use_container_width=True)
     else:
-        missing_file_notice("product_performance.csv", ANALYTICS_DIR / "product_performance.csv")
+        missing_data_notice("Product performance")
 
 
 # ---------------------------------------------------------------------------
@@ -323,6 +292,9 @@ elif page == "Product Performance":
 # ---------------------------------------------------------------------------
 elif page == "Inventory Health":
     st.title("Inventory Health")
+
+    inventory_payload = fetch("/api/inventory")
+    inventory_health = to_df(inventory_payload, "inventory_health")
 
     if inventory_health is not None:
         section_title(
@@ -351,7 +323,7 @@ elif page == "Inventory Health":
         closest = inventory_health.sort_values("estimated_days_to_stockout").head(10)
         st.dataframe(closest, use_container_width=True, hide_index=True)
     else:
-        missing_file_notice("inventory_health.csv", ANALYTICS_DIR / "inventory_health.csv")
+        missing_data_notice("Inventory health")
 
 
 # ---------------------------------------------------------------------------
@@ -363,6 +335,9 @@ elif page == "Forecasting":
         "Comparing three baseline forecasting approaches against actual revenue. "
         "This is intentionally simple — see the explanation below for why."
     )
+
+    forecast_payload = fetch("/api/forecast")
+    sales_forecast = to_df(forecast_payload, "sales_forecast")
 
     if sales_forecast is not None:
         section_title("Actual vs predicted revenue", "One line per model, against the actual outcome.")
@@ -386,7 +361,7 @@ elif page == "Forecasting":
         st.divider()
         section_title(
             "Baseline model metrics",
-            "MAE, RMSE, and MAPE for each model against actual revenue, computed live from the predictions file.",
+            "MAE, RMSE, and MAPE for each model against actual revenue, computed live from the forecast response.",
         )
 
         def compute_metrics(actual: pd.Series, pred: pd.Series) -> dict:
@@ -407,7 +382,7 @@ elif page == "Forecasting":
         st.markdown("#### Why does the naive baseline currently perform best?")
         st.markdown(
             "- **Only a handful of months of history are available** in "
-            f"`sales_forecast_baseline.csv` ({len(sales_forecast)} rows). Linear regression "
+            f"the forecast response ({len(sales_forecast)} rows). Linear regression "
             "needs enough historical points to learn a trend and seasonal pattern reliably — "
             "with this little data it tends to overfit to noise and drift off actual values.\n"
             "- **The naive model (\"next month = this month\") wins when the series is fairly "
@@ -421,7 +396,7 @@ elif page == "Forecasting":
             "trusting a more sophisticated forecaster**, not a sign the pipeline is broken."
         )
     else:
-        missing_file_notice("sales_forecast_baseline.csv", PREDICTIONS_DIR / "sales_forecast_baseline.csv")
+        missing_data_notice("Sales forecast")
 
 
 # ---------------------------------------------------------------------------
@@ -437,29 +412,28 @@ elif page == "Feature Store Preview":
     tab1, tab2, tab3 = st.tabs(["Customer features", "Product features", "Store features"])
 
     with tab1:
+        customers_payload = fetch("/api/customers")
+        customer_features = to_df(customers_payload, "customer_features")
         if customer_features is not None:
             st.caption("One row per customer: RFM-style fields (recency, frequency, monetary) plus tenure.")
             st.dataframe(customer_features.head(20), use_container_width=True, hide_index=True)
         else:
-            missing_file_notice("customer_features.csv", FEATURES_DIR / "customer_features.csv")
+            missing_data_notice("Customer features")
 
     with tab2:
+        products_payload = fetch("/api/products")
+        product_features = to_df(products_payload, "product_features")
         if product_features is not None:
             st.caption("One row per product: recent sales velocity and rolling growth, alongside return rate.")
             st.dataframe(product_features.head(20), use_container_width=True, hide_index=True)
         else:
-            missing_file_notice("product_features.csv", FEATURES_DIR / "product_features.csv")
+            missing_data_notice("Product features")
 
     with tab3:
+        stores_payload = fetch("/api/stores")
+        store_features = to_df(stores_payload, "store_features")
         if store_features is not None:
             st.caption("One row per store: revenue, growth, and return-rate fields used by the store-level models.")
             st.dataframe(store_features.head(20), use_container_width=True, hide_index=True)
         else:
-            missing_file_notice("store_features.csv", FEATURES_DIR / "store_features.csv")
-
-
-# ---------------------------------------------------------------------------
-# Footer — shown on every page, since it's rendered after the if/elif chain.
-# ---------------------------------------------------------------------------
-st.divider()
-st.caption("Built by Sonal Rao | Data Engineering & AI Portfolio Project")
+            missing_data_notice("Store features")
