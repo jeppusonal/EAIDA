@@ -1,93 +1,297 @@
-# EAIDA — Enterprise AI Intelligent Data Assistant (MVP)
+# EAIDA – Enterprise AI Intelligent Data Assistant
 
-> Ask a business question in natural language. Get SQL, data, a chart, and an explanation back.
+An end-to-end retail analytics platform demonstrating modern data engineering, analytics engineering, machine learning, backend API development, dashboarding, and containerization.
 
-This is the fast-MVP track of EAIDA: a scoped-down, 10–14 day build that proves the core loop before we invest in the full data platform (Airflow, dbt, multi-agent orchestration, Azure). Everything here is designed to be replaced or extended, not thrown away — the data model and folder layout match the long-term architecture, we're just deferring the heavy infrastructure.
+EAIDA simulates a real enterprise retail environment by generating synthetic business data, transforming it into analytics-ready datasets, building machine learning models, exposing insights through a REST API, and visualizing everything in an interactive dashboard.
 
-## The one question this MVP answers
+---
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.33-red)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-**"Why did sales drop in Sydney?"**
+---
 
-The synthetic dataset is generated with a deliberate, realistic revenue dip in the Sydney store in the most recent period. The point of the MVP is to be able to ask that question in plain English and get a grounded, data-backed answer — not to boil the ocean on every possible business question.
-
-## MVP scope
-
-**In scope:**
-- Python, PostgreSQL, Streamlit
-- Synthetic retail dataset (customers, stores, products, orders, order items, inventory, returns, marketing campaigns)
-- Basic ML (a simple regression/trend model to quantify the drop)
-- A local LLM via Ollama for natural-language explanation (added once the data layer is solid)
-
-**Explicitly out of scope for MVP** (deferred to the full build):
-- Airflow orchestration
-- dbt transformations
-- Multi-agent system
-- Azure deployment
-- Vector database / RAG
-
-## Status
-
-- **Day 1–2**: dataset design and generation (this README, architecture overview, and notebooks under `notebooks/`).
-- **Day 3**: raw data loaded into PostgreSQL (`src/loading/load_raw_data.py`), six analytical views defined (`sql/02_analytical_views.sql`), and the Sydney revenue drop proven with plain SQL — no ML yet (`sql/03_sydney_drop_analysis.sql`). The drop is real: Sydney revenue fell ~41% month-over-month in May 2026 versus a trailing-3-month expectation, and the decline is broad-based across product categories rather than concentrated in one — see `docs/data/day3_findings.md`.
-
-### Running Day 3 locally (macOS)
-
-```bash
-# 1. Postgres running locally (either works)
-brew install postgresql@16 && brew services start postgresql@16
-# or: docker run --name eaida-pg -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres:16
-
-createdb eaida
-
-# 2. Python env
-pip install -r requirements.txt
-cp .env.example .env   # adjust credentials if yours differ
-
-# 3. Load the data (creates schema + loads all 8 tables)
-python -m src.loading.load_raw_data
-
-# 4. Create the analytical views
-psql eaida -f sql/02_analytical_views.sql
-
-# 5. Run the drop analysis
-psql eaida -f sql/03_sydney_drop_analysis.sql
-```
-
-## Project structure
+## Project Architecture
 
 ```
-eaida/
-├── README.md
+                   Synthetic Data Generation
+                           │
+                           ▼
+                   Raw CSV Data Layer
+                           │
+                           ▼
+                  Data Validation Pipeline
+                           │
+                           ▼
+                Analytics & Feature Engineering
+                           │
+             ┌─────────────┴─────────────┐
+             ▼                           ▼
+      Machine Learning             FastAPI Backend
+             │                           │
+             └─────────────┬─────────────┘
+                           ▼
+                 Streamlit Dashboard
+                           │
+                           ▼
+                    Docker Deployment
+```
+
+---
+
+## Tech Stack
+
+### Languages
+- Python
+- SQL
+
+### Data Engineering
+- Pandas
+- NumPy
+
+### Machine Learning
+- Scikit-learn
+- Joblib
+
+### Backend
+- FastAPI
+- Uvicorn
+
+### Dashboard
+- Streamlit
+- Plotly
+
+### Deployment
+- Docker
+- Docker Compose
+
+---
+
+# Project Structure
+
+```
+EAIDA/
+│
+├── app/                    # Streamlit dashboard
+├── backend/                # FastAPI REST API
+├── data/
+│   ├── raw/
+│   ├── analytics/
+│   ├── features/
+│   └── predictions/
+│
 ├── docs/
-│   ├── architecture/overview.md      # MVP architecture (this stage)
-│   ├── data/dataset_generation_plan.md
-│   └── adr/                          # architecture decision records
-├── notebooks/                        # exploratory, educational data generation
-│   ├── 01_generate_customers.ipynb
-│   ├── 02_generate_products.ipynb
-│   ├── 03_generate_stores.ipynb
-│   ├── 04_generate_orders.ipynb
-│   ├── 05_generate_inventory.ipynb
-│   ├── 06_generate_returns.ipynb
-│   ├── 07_generate_marketing_campaigns.ipynb
-│   └── 08_data_validation.ipynb
-├── data/raw/                         # generated CSVs land here
-└── src/                              # reusable modules (populated after MVP notebooks are validated)
+├── models/
+├── notebooks/
+├── sql/
+├── src/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
 ```
 
-## Why notebooks first
+---
 
-For the MVP data-generation stage, notebooks are the right tool: they make each generation decision visible and inspectable (sample rows, distributions, validation) while we're still shaping the dataset. Once the schema and generation logic are validated, the reusable logic moves into `src/` as proper modules — notebooks stay as documentation and exploration, not production code.
+# Pipeline
 
-## Getting started
+## 1. Synthetic Data Generation
+
+Generated realistic retail datasets including:
+
+- Customers
+- Products
+- Stores
+- Orders
+- Order Items
+- Inventory
+- Marketing Campaigns
+- Returns
+
+---
+
+## 2. Data Validation
+
+Comprehensive validation framework including:
+
+- Primary key validation
+- Foreign key validation
+- Duplicate detection
+- Null checks
+- Referential integrity
+- Business rule validation
+- Revenue consistency checks
+
+---
+
+## 3. Analytics Layer
+
+Curated analytics datasets:
+
+- Monthly Sales
+- Daily Sales
+- Customer Summary
+- Product Performance
+- Product Monthly Sales
+- Store Performance
+- Inventory Health
+- Marketing Performance
+- Returns Summary
+
+---
+
+## 4. Feature Store
+
+Generated reusable ML feature tables for:
+
+- Sales Forecasting
+- Customers
+- Products
+- Stores
+
+---
+
+## 5. Machine Learning
+
+Baseline forecasting pipeline including:
+
+- Naive Forecast
+- Rolling Average Forecast
+- Linear Regression
+
+Evaluation Metrics:
+
+- RMSE
+- MAE
+- MAPE
+
+Models are serialized using Joblib.
+
+---
+
+## 6. FastAPI Backend
+
+REST API exposing business datasets.
+
+Endpoints:
+
+```
+GET /api/overview
+GET /api/revenue
+GET /api/products
+GET /api/stores
+GET /api/customers
+GET /api/inventory
+GET /api/forecast
+```
+
+Swagger UI:
+
+```
+http://localhost:8000/docs
+```
+
+---
+
+## 7. Streamlit Dashboard
+
+Interactive dashboard providing:
+
+- Executive Overview
+- Revenue Trends
+- Store Performance
+- Product Performance
+- Inventory Health
+- Sales Forecasting
+- Feature Store Preview
+
+---
+
+## 8. Docker Deployment
+
+Entire platform containerized using Docker Compose.
+
+Services:
+
+- FastAPI Backend
+- Streamlit Dashboard
+
+Run:
 
 ```bash
-cd eaida
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt   # added once dependencies are finalized
-jupyter lab notebooks/
+docker compose up --build
 ```
 
-## Roadmap after the MVP
+Backend:
 
-Once the natural-language → SQL → chart → explanation loop works end to end on this synthetic dataset, later milestones re-introduce the full architecture: dbt for transformation, Airflow for orchestration, a vector database for document/RAG search, and a proper multi-agent system. See `docs/architecture/overview.md` for how this MVP maps onto that longer-term design.
+```
+http://localhost:8000
+```
+
+Dashboard:
+
+```
+http://localhost:8501
+```
+
+---
+
+# Key Features
+
+- End-to-end data engineering pipeline
+- Data quality framework
+- Analytics engineering
+- Feature store
+- Machine learning baseline
+- REST API
+- Interactive BI dashboard
+- Docker deployment
+- Enterprise project structure
+
+---
+
+# Skills Demonstrated
+
+- Data Engineering
+- ETL Pipelines
+- Data Validation
+- Feature Engineering
+- Machine Learning
+- FastAPI
+- REST APIs
+- Streamlit
+- Plotly
+- Docker
+- Git
+- Analytics Engineering
+
+---
+
+# Future Improvements
+
+- PostgreSQL integration
+- Airflow orchestration
+- CI/CD pipeline
+- Authentication
+- Cloud deployment (Azure/AWS)
+- Model retraining pipeline
+- Real-time streaming
+- LLM-powered analytics assistant
+
+---
+
+# Author
+
+**Sonal Rao**
+
+Master of Data Science and Innovation  
+University of Technology Sydney
+
+GitHub:
+https://github.com/jeppusonal/EAIDA
+
+LinkedIn:
+https://www.linkedin.com/in/sonalrao/
