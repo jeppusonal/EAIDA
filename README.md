@@ -9,7 +9,6 @@ EAIDA simulates a real enterprise retail environment by generating synthetic bus
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.33-red)
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
